@@ -9,7 +9,7 @@ function ListAllFilm(props) {
   // console.log(valueFilm);
   const renderListAnime = () => {
     return valueFilm.map((value, id) => (
-      <div className="w-[80%]" key={value.annilist_id}>
+      <div className="w-[80%] transition-all" key={value.annilist_id}>
         <div className="listFilm_render ">
           <Title_film name={value.name} />
           {value.isFirst ? <List_category /> : ""}

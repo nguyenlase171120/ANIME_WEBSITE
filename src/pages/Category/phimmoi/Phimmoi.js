@@ -2,6 +2,8 @@ import { useState, useEffect } from "react";
 import { FilmAPI } from "../../../api/FilmAPI";
 import Search_film from "../../../components/Search/Search_film";
 import ListAllFilm from "./ListFilm/ListType/ListAllFilm";
+import { useSelector } from "react-redux";
+import { number_selector } from "../../../redux/Selector/Numbertype_selector";
 
 function Phimmoi() {
   const [listFilm, setListFilm] = useState([]);
@@ -11,20 +13,24 @@ function Phimmoi() {
   const [listFilmHoatHinh, setListFilmHoatHinh] = useState([]);
   const [listFilmChieuRap, setListFilmChieuRap] = useState([]);
   const [getAllFilm, setGetAllFilm] = useState([]);
+  const [indexType, setIndexType] = useState(1);
+
+  const isNumberType = useSelector(number_selector);
 
   //Call API to get list film
+
   useEffect(async () => {
     try {
       const data = {
-        page: 1,
+        page: isNumberType,
       };
-
       const allFilm = await FilmAPI.getAllFilm(data);
       setListFilm(allFilm.data.documents);
+      setIsLoading(false);
     } catch (error) {
       console.log(error);
     }
-  }, []);
+  }, [isNumberType]);
 
   //Set list film le
   useEffect(() => {
@@ -98,11 +104,11 @@ function Phimmoi() {
       name: "Phim chiếu rạp",
     };
     const allFilms = [phimbo, phimle, phimhoathinh, phimchieurap];
+    console.log(allFilms);
 
     if (allFilms[0].list_anime.length > 0) {
       setGetAllFilm(allFilms);
       setIsLoading(true);
-      console.log(allFilms);
     }
   }, [listFilmChieuRap]);
 

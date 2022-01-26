@@ -23,7 +23,7 @@ function Website_container() {
         <Route path="/" element={<Phimmoi />} />
       </Routes>
 
-      <Footer_container />
+      {/* <Footer_container /> */}
     </div>
   );
 }
