@@ -3,5 +3,33 @@
 @tailwind utilities;
 
 .element_center {
-  @apply flex items-center justify-center flex-col;
+  @apply flex items-center justify-center;
+}
+
+.navLinks_header {
+  @apply text-[17px] text-[#899ead] cursor-pointer mr-[30px] font-bold hover:text-white py-[20px];
+}
+
+.first_navLinks {
+  @apply border-4 border-b-yellow-500 border-t-transparent border-x-transparent;
+}
+
+.bg_full {
+  @apply bg-cover bg-center min-h-full w-screen;
+}
+
+.link_film {
+  @apply rounded-full px-[30px] py-[9px] cursor-pointer mr-[15px];
+}
+
+.link_film_second {
+  @apply bg-[#0c2738] text-[#495863] hover:text-white;
+}
+
+.listFilm_render {
+  @apply flex items-center w-full justify-between;
+}
+
+.footer_link {
+  @apply text-[#74a8cf] mb-[10px] hover:text-yellow-500 cursor-pointer;
 }

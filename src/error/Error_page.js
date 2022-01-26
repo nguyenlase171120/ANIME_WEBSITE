@@ -5,7 +5,7 @@ function Error_page() {
   const navigate = useNavigate();
 
   return (
-    <div className="bg-[url('https://wallpaperaccess.com/full/2830779.jpg')] bg-cover bg-center w-screen h-screen element_center text-white">
+    <div className="bg-[url('https://wallpaperaccess.com/full/2830779.jpg')] bg-cover bg-center w-screen h-screen element_center flex-col text-white">
       <h1 className="font-bold text-[80px] mb-[20px]">Oh no!</h1>
       <p className="mb-[20px] font-semibold text-[30px]">
         Sorry. This page does not exist

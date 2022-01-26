@@ -1,16 +1,16 @@
 //Import libraries
 import React from "react";
 import { Routes, Route } from "react-router-dom";
-import Header_container from "./components/Header/Header_container";
 
 //Import components
 import Error_page from "./error/Error_page";
+import Website_container from "./pages/Container/Website_container";
 
 function App() {
   return (
     <div>
       <Routes>
-        <Route path="/" element={<Header_container />} />
+        <Route path="/*" element={<Website_container />} />
         <Route path="*" element={<Error_page />} />
       </Routes>
     </div>
