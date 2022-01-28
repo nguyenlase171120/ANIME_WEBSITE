@@ -23,7 +23,7 @@
 }
 
 .link_film_second {
-  @apply bg-[#0c2738] text-[#495863] hover:text-white;
+  @apply text-[#495863] hover:text-white;
 }
 
 .listFilm_render {
@@ -32,4 +32,8 @@
 
 .footer_link {
   @apply text-[#74a8cf] mb-[10px] hover:text-yellow-500 cursor-pointer;
+}
+
+.render_star {
+  @apply flex items-center my-[5px] text-yellow-500;
 }

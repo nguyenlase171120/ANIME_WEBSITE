@@ -2,27 +2,28 @@ import React from "react";
 import { FaStar } from "react-icons/fa";
 
 function RenderStar(props) {
+  // console.log(props.animeScore);
   const renderStarAnime = () => {
-    if (props.animeScore >= 50 && props.animeScore < 70) {
+    if (props.scoreAnime >= 0 && props.scoreAnime < 50) {
       return (
-        <div className="element_center">
-          <FaStar />
-          <FaStar />
-          <FaStar />
+        <div className="render_star">
+          <FaStar className="mr-[10px]" />
+          <FaStar className="mr-[10px]" />
+          <FaStar className="mr-[10px]" />
         </div>
       );
-    } else if (props.animeScore >= 70 && props.animeScore < 80) {
+    } else if (props.scoreAnime >= 50 && props.scoreAnime < 80) {
       return (
-        <div>
-          <FaStar />
-          <FaStar />
-          <FaStar />
-          <FaStar />
+        <div className="render_star">
+          <FaStar className="mr-[10px]" />
+          <FaStar className="mr-[10px]" />
+          <FaStar className="mr-[10px]" />
+          <FaStar className="mr-[10px]" />
         </div>
       );
-    } else {
+    } else if (props.scoreAnime >= 80) {
       return (
-        <div className="flex items-center my-[5px] text-yellow-500  ">
+        <div className="render_star ">
           <FaStar className="mr-[10px]" />
           <FaStar className="mr-[10px]" />
           <FaStar className="mr-[10px]" />

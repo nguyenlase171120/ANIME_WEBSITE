@@ -5,4 +5,8 @@ export const FilmAPI = {
     const url = "/v1/anime";
     return axiosClient.get(url, { params });
   },
+  getFilmRandom: (params) => {
+    const url = `/v1/random/anime/${params}/true`;
+    return axiosClient.get(url);
+  },
 };

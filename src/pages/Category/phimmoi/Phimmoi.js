@@ -104,7 +104,6 @@ function Phimmoi() {
       name: "Phim chiếu rạp",
     };
     const allFilms = [phimbo, phimle, phimhoathinh, phimchieurap];
-    console.log(allFilms);
 
     if (allFilms[0].list_anime.length > 0) {
       setGetAllFilm(allFilms);

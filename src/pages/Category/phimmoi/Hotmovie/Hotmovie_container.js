@@ -5,7 +5,7 @@ function Hotmovie_container() {
   const [listMovie, setListMovie] = useState([]);
 
   return (
-    <div>
+    <div className="ml-[30px]">
       <Hotmovie_children />
     </div>
   );
