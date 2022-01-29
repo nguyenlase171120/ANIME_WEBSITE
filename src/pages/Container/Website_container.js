@@ -9,10 +9,11 @@ import PhimChieuRap from "../Category/phimchieurap/PhimChieuRap";
 import PhimHoatHinh from "../Category/phimhoathinh/PhimHoatHinh";
 import Phimmoi from "../Category/phimmoi/Phimmoi";
 import Footer_container from "../../components/Footer/Footer_container";
+import Search_Page from "../Search/Search_Page";
 
 function Website_container() {
   return (
-    <div className="bg_full bg-[#081B27] element_center flex-col min-h-full ">
+    <div className="bg_full bg-[#081B27] element_center flex-col h-[100% + 50px] ">
       <Header_container />
 
       <Routes>
@@ -21,9 +22,10 @@ function Website_container() {
         <Route path="category/phim-chieu-rap" element={<PhimChieuRap />} />
         <Route path="category/phim-hoat-hinh" element={<PhimHoatHinh />} />
         <Route path="/" element={<Phimmoi />} />
+        <Route path="/search" element={<Search_Page />} />
       </Routes>
 
-      {/* <Footer_container /> */}
+      <Footer_container />
     </div>
   );
 }

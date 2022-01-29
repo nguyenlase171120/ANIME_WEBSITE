@@ -37,3 +37,7 @@
 .render_star {
   @apply flex items-center my-[5px] text-yellow-500;
 }
+
+.style_desc {
+  @apply text-[#9cabb6] mt-[15px] mb-[20px];
+}

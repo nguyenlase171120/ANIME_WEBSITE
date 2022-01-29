@@ -4,7 +4,6 @@ import ReactPlayer from "react-player/youtube";
 function TrailerVideo(props) {
   const [videoTrailer, setVideoTrailer] = useState(props.video);
 
-  console.log(videoTrailer);
   return (
     <div className="flex flex-col mb-[60px] pt-[20px] border-t border-gray-600">
       <h1 className="text-[#f1b722] mt-[10px] mb-[20px] text-[28px] font-semibold">

@@ -1,12 +1,20 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 function Button_search(props) {
+  const navigate = useNavigate();
+
+  const handleSearch = () => {
+    navigate("/search");
+  };
+
   return (
-    <div>
-      <button className="rounded-r-md px-[15px] py-[7px] bg-[#3898ec] text-white absolute top-0 right-0">
-        {props.name}
-      </button>
-    </div>
+    <button
+      onClick={handleSearch}
+      className="rounded-r-md px-[15px] py-[7px] bg-[#3898ec] text-white absolute top-0 right-0"
+    >
+      {props.name}
+    </button>
   );
 }
 

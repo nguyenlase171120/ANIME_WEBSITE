@@ -4,6 +4,8 @@ import Search_film from "../../../components/Search/Search_film";
 import ListAllFilm from "./ListFilm/ListType/ListAllFilm";
 import { useSelector } from "react-redux";
 import { number_selector } from "../../../redux/Selector/Numbertype_selector";
+import { FaLongArrowAltUp } from "react-icons/fa";
+import { Link as Scroll } from "react-scroll";
 
 function Phimmoi() {
   const [listFilm, setListFilm] = useState([]);
@@ -13,12 +15,16 @@ function Phimmoi() {
   const [listFilmHoatHinh, setListFilmHoatHinh] = useState([]);
   const [listFilmChieuRap, setListFilmChieuRap] = useState([]);
   const [getAllFilm, setGetAllFilm] = useState([]);
-  const [indexType, setIndexType] = useState(1);
+  const [position, setPosition] = useState();
 
   const isNumberType = useSelector(number_selector);
 
-  //Call API to get list film
+  window.addEventListener("scroll", () => {
+    const position = window.scrollY;
+    setPosition(position);
+  });
 
+  //Call API to get list film
   useEffect(async () => {
     try {
       const data = {
@@ -51,7 +57,6 @@ function Phimmoi() {
         getFilmFirst.push(listFilm[i]);
       }
     }
-
     setListFilmBo(getFilmFirst);
   }, [listFilm]);
 
@@ -63,7 +68,6 @@ function Phimmoi() {
         getFilmFirst.push(listFilm[i]);
       }
     }
-
     setListFilmHoatHinh(getFilmFirst);
   }, [listFilm]);
 
@@ -75,7 +79,6 @@ function Phimmoi() {
         getFilmFirst.push(listFilm[i]);
       }
     }
-
     setListFilmChieuRap(getFilmFirst);
   }, [listFilm]);
 
@@ -112,12 +115,24 @@ function Phimmoi() {
   }, [listFilmChieuRap]);
 
   return (
-    <div className="mt-[76px] element_center flex-col w-[80%] pt-[30px]">
+    <div
+      className="mt-[76px] element_center flex-col w-[80%] pt-[30px]"
+      id="topScroll"
+    >
       <Search_film />
       {isLoading ? (
         <ListAllFilm allFilm={getAllFilm} />
       ) : (
         <h1 className="text-white ">PLease wait a minute for loading ...</h1>
+      )}
+      {position > 1000 && (
+        <Scroll to="topScroll" smooth={true} duration={500}>
+          <button className=" text-white rounded-3xl p-[10px]   bg-white fixed bottom-6 right-8 z-50">
+            <div className="element_center">
+              <FaLongArrowAltUp className="text-gray-500" />
+            </div>
+          </button>
+        </Scroll>
       )}
     </div>
   );

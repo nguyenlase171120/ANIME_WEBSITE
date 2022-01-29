@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Phimmoi_slice } from "../../../../redux/Phimmoi_redux/Phimmoi_slice";
+import { pagination_slice } from "../../../../redux/Phimmoi_redux/Pagination_slice";
 import { number_selector } from "../../../../redux/Selector/Numbertype_selector";
 import { event_text, white_bg } from "../MovieStyle";
 
@@ -11,7 +11,6 @@ function List_category() {
   console.log(typeSelect);
   useEffect(() => {
     if (typeSelect === 1) {
-      // $("#allFilm").style.backgroundColor = "white";
       white_bg("#allFilm");
       event_text("#allFilm");
     } else if (typeSelect === 2) {
@@ -24,15 +23,15 @@ function List_category() {
   }, []);
 
   const handleCommmingMovie = () => {
-    dispatch(Phimmoi_slice.actions.hanldeNumberType(2));
+    dispatch(pagination_slice.actions.handleNumberType(2));
   };
 
   const handleNewMovie = () => {
-    dispatch(Phimmoi_slice.actions.hanldeNumberType(3));
+    dispatch(pagination_slice.actions.handleNumberType(3));
   };
 
   const handleAllMovie = () => {
-    dispatch(Phimmoi_slice.actions.hanldeNumberType(1));
+    dispatch(pagination_slice.actions.handleNumberType(1));
   };
 
   return (

@@ -40,13 +40,14 @@ function List_film(props) {
 
         <RenderStar scoreAnime={anime.score} key={id} />
 
-        <Link
+        <div
           to="/phim/detailsMovie"
           key={anime.id}
-          className="font-bold my-[15px] text-md text-white hover:underline cursor-pointer"
+          className="font-bold my-[15px] cursor-pointer text-md text-white hover:underline "
+          onClick={() => handleDetailsMovie(anime)}
         >
           {anime.titles.en}
-        </Link>
+        </div>
 
         <div className="flex items-center  flex-row">
           <FaTicketAlt className="text-yellow-500 mr-[15px]" />
