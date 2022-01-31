@@ -1,5 +1,5 @@
-import { useDispatch, useSelector } from "react-redux";
-import { pagination_slice } from "../../redux/Phimmoi_redux/Pagination_slice";
+import { useDispatch } from "react-redux";
+import { pagination_slice } from "../../redux/Reducer/Pagination_slice";
 import { ListRender } from "./Render_Pagination";
 
 const $ = document.querySelector.bind(document);

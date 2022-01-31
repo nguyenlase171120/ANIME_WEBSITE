@@ -1,12 +1,13 @@
 import { useNavigate } from "react-router-dom";
 import { FilmAPI } from "../../api/FilmAPI";
 import { useDispatch } from "react-redux";
-import { Search_slice } from "../../redux/Phimmoi_redux/Search_slice";
+import { Search_slice } from "../../redux/Reducer/Search_slice";
 
 function Button_search(props) {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
+  //Get list movie with keyword search
   const handleSearch = async () => {
     const param = {
       title: props.valueSearch,

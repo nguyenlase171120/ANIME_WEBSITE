@@ -1,11 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit";
-import { Phimmoi_slice } from "./Phimmoi_redux/Phimmoi_slice";
+import { Phimmoi_slice } from "./Reducer/Phimmoi_slice";
 
 //This library used to save redux state when we are refresh website
 import { persistStore, persistReducer } from "redux-persist";
 import storage from "redux-persist/lib/storage";
-import { pagination_slice } from "./Phimmoi_redux/Pagination_slice";
-import { Search_slice } from "./Phimmoi_redux/Search_slice";
+import { pagination_slice } from "./Reducer/Pagination_slice";
+import { Search_slice } from "./Reducer/Search_slice";
 import { UserLogin_slice } from "./User/UserLogin_slice";
 
 const persistConfig = {

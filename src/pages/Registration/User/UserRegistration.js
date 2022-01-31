@@ -2,7 +2,6 @@ import { useDispatch } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { useFormik } from "formik";
 import * as Yup from "yup";
-import { UserLogin_slice } from "../../../redux/User/UserLogin_slice";
 
 function UserRegistration() {
   const dispatch = useDispatch();
@@ -111,7 +110,7 @@ function UserRegistration() {
               <p className="error_input">{formik.errors.confirmPassword}</p>
             )}
             <div className="text-right">
-              <Link to="user-login" className="link_form">
+              <Link to="/user-login" className="link_form">
                 Already account ?
               </Link>
             </div>

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import { FilmAPI } from "../../../api/FilmAPI";
-import MovieWatch from "../../Suggest/MovieWatch";
+import { FilmAPI } from "../../api/FilmAPI";
+import MovieWatch from "../SuggestMovie/MovieWatch";
 
 function Suggest_movie() {
   const [suggestMovie, setSuggestMovie] = useState([]);

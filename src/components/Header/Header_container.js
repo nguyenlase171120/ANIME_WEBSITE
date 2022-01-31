@@ -5,9 +5,7 @@ import { useDispatch } from "react-redux";
 //Import libraries
 import { logo_website } from "../../assets/asset_render";
 import Header_children_link from "./Header_children/Header_children_link";
-import { Phimmoi_slice } from "../../redux/Phimmoi_redux/Phimmoi_slice";
-import { onAuthStateChanged } from "firebase/auth";
-import { authentication } from "../../firebase/Firebase-config";
+import { Phimmoi_slice } from "../../redux/Reducer/Phimmoi_slice";
 
 function Header_container() {
   const [isLogin, setIsLogin] = useState(false);

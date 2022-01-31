@@ -6,12 +6,12 @@ import Header_container from "../../../components/Header/Header_container";
 import { AnimeDetails } from "../../../redux/Selector/AnimeDetails_selector";
 import RenderStar from "../../Category/phimmoi/StarFilm/RenderStar";
 import { useNavigate } from "react-router-dom";
-import { Phimmoi_slice } from "../../../redux/Phimmoi_redux/Phimmoi_slice";
+import { Phimmoi_slice } from "../../../redux/Reducer/Phimmoi_slice";
 import { logo_website } from "../../../assets/asset_render";
 import Search_film from "../../../components/Search/Search_film";
 import { FilmAPI } from "../../../api/FilmAPI";
 import HotMovide_content from "../../Category/phimmoi/Hotmovie/Content/HotMovide_content";
-import MovieWatch from "../../../components/Suggest/MovieWatch";
+import MovieWatch from "../../../components/SuggestMovie/MovieWatch";
 import Footer_container from "../../../components/Footer/Footer_container";
 import { Link as Scroll } from "react-scroll";
 
@@ -114,7 +114,7 @@ function Movie_children() {
 
   const handleDetails = (value) => {
     dispatch(Phimmoi_slice.actions.handleDetailsAnime(value));
-    navigate("/movie/detailsMovie");
+    navigate("movie/");
   };
 
   const handleMoveEpisode = (value) => {

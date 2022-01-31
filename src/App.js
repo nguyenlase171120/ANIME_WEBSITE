@@ -16,7 +16,7 @@ function App() {
       <Routes>
         <Route path="/*" element={<Website_container />} />
         <Route path="*" element={<Error_page />} />
-        <Route path="/movie/detailsMovie" element={<DetailsMovie />} />
+        <Route path="/details-movie" element={<DetailsMovie />} />
         <Route path="/watch/watchMovie" element={<Movie_parent />} />
         <Route path="/user-register" element={<UserRegistration />} />
         <Route path="/user-login" element={<UserLogin />} />

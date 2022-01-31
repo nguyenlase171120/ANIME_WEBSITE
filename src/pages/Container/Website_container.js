@@ -10,6 +10,7 @@ import PhimHoatHinh from "../Category/phimhoathinh/PhimHoatHinh";
 import Phimmoi from "../Category/phimmoi/Phimmoi";
 import Footer_container from "../../components/Footer/Footer_container";
 import Search_Page from "../Search/Search_Page";
+import Error_page from "../../error/Error_page";
 
 function Website_container() {
   return (
@@ -17,12 +18,13 @@ function Website_container() {
       <Header_container />
 
       <Routes>
-        <Route path="category/phim-le" element={<Phimle />} />
-        <Route path="category/phim-bo" element={<PhimBo />} />
-        <Route path="category/phim-chieu-rap" element={<PhimChieuRap />} />
-        <Route path="category/phim-hoat-hinh" element={<PhimHoatHinh />} />
+        <Route path="phim-le" element={<Phimle />} />
+        <Route path="phim-bo" element={<PhimBo />} />
+        <Route path="phim-chieu-rap" element={<PhimChieuRap />} />
+        <Route path="phim-hoat-hinh" element={<PhimHoatHinh />} />
         <Route path="/" element={<Phimmoi />} />
         <Route path="/search" element={<Search_Page />} />
+        <Route path="/*" element={<Error_page />} />
       </Routes>
 
       <Footer_container />

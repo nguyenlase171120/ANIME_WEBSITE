@@ -1,4 +1,3 @@
-import React from "react";
 import Movie_children from "../Children/Movie_children";
 
 function Movie_parent() {

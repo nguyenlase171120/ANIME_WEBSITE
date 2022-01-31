@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import RenderStar from "../../StarFilm/RenderStar";
 import { useDispatch } from "react-redux";
-import { Phimmoi_slice } from "../../../../../redux/Phimmoi_redux/Phimmoi_slice";
+import { Phimmoi_slice } from "../../../../../redux/Reducer/Phimmoi_slice";
 
 function HotMovide_content(props) {
   const [listMovie, setListMovie] = useState(props.listHotMovie);
@@ -11,7 +11,7 @@ function HotMovide_content(props) {
 
   const handleDetailsMovie = (animeClick) => {
     dispatch(Phimmoi_slice.actions.handleDetailsAnime(animeClick));
-    navigate("/movie/detailsMovie");
+    navigate("/details-movie");
   };
 
   const renderListMovie = () => {

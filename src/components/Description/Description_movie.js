@@ -5,7 +5,7 @@ import {
   demon_slayer_2,
   boruto,
   boruto2,
-} from "../../../assets/asset_render";
+} from "../../assets/asset_render";
 
 export const List_description = [
   {

@@ -5,7 +5,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
 import { useDispatch } from "react-redux";
-import { Phimmoi_slice } from "../../../../../redux/Phimmoi_redux/Phimmoi_slice";
+import { Phimmoi_slice } from "../../../../../redux/Reducer/Phimmoi_slice";
 
 function List_film(props) {
   const dispatch = useDispatch();
@@ -14,7 +14,7 @@ function List_film(props) {
   const [listFilms, setListFilms] = useState(props.listFilmLe);
   const handleDetailsMovie = (animeClick) => {
     dispatch(Phimmoi_slice.actions.handleDetailsAnime(animeClick));
-    navigate("/movie/detailsMovie");
+    navigate("/details-movie");
   };
 
   const hanldeLoadImage = () => {

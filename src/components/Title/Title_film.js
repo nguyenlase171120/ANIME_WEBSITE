@@ -1,5 +1,3 @@
-import React from "react";
-
 function Title_film(props) {
   return (
     <div className="">

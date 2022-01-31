@@ -1,6 +1,6 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Phimmoi_slice } from "../../redux/Phimmoi_redux/Phimmoi_slice";
+import { Phimmoi_slice } from "../../redux/Reducer/Phimmoi_slice";
 import { search_selector } from "../../redux/Selector/SearchAnime_selector";
 import { useNavigate } from "react-router-dom";
 function Search_content() {
@@ -11,7 +11,7 @@ function Search_content() {
 
   const handleDetails = (value) => {
     dispatch(Phimmoi_slice.actions.handleDetailsAnime(value));
-    navigate("/movie/detailsMovie");
+    navigate("/details-movie");
   };
 
   return (

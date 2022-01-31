@@ -1,7 +1,7 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import RenderStar from "../../pages/Category/phimmoi/StarFilm/RenderStar";
 import { useDispatch } from "react-redux";
-import { Phimmoi_slice } from "../../redux/Phimmoi_redux/Phimmoi_slice";
+import { Phimmoi_slice } from "../../redux/Reducer/Phimmoi_slice";
 import { FaTicketAlt } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 function MovieWatch(props) {
@@ -11,7 +11,7 @@ function MovieWatch(props) {
 
   const handleDetail = (value) => {
     dispatch(Phimmoi_slice.actions.handleDetailsAnime(value));
-    navigate("/movie/detailsMovie");
+    navigate("/details-movie");
 
     window.location.reload();
     window.scrollTo({ top: 0, behavior: "smooth" });

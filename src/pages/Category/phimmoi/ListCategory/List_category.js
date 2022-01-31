@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { pagination_slice } from "../../../../redux/Phimmoi_redux/Pagination_slice";
+import { pagination_slice } from "../../../../redux/Reducer/Pagination_slice";
 import { number_selector } from "../../../../redux/Selector/Numbertype_selector";
 import { event_text, white_bg } from "../MovieStyle";
 

@@ -5,8 +5,7 @@ import { FaTicketAlt } from "react-icons/fa";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
 import { useDispatch } from "react-redux";
-import { Phimmoi_slice } from "../../redux/Phimmoi_redux/Phimmoi_slice";
-import Pagination_movie from "../Pagination/Pagination_movie";
+import { Phimmoi_slice } from "../../redux/Reducer/Phimmoi_slice";
 import { useSelector } from "react-redux";
 import {
   listPagination_selector,
@@ -18,7 +17,6 @@ function ListFilms(props) {
   const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const numberPage = useSelector(numberPage_selector);
   const listValue = useSelector(listPagination_selector);
 
   useEffect(() => {
@@ -33,7 +31,7 @@ function ListFilms(props) {
   //Handle show details movie clicked
   const handleDetailsMovie = (animeClick) => {
     dispatch(Phimmoi_slice.actions.handleDetailsAnime(animeClick));
-    navigate("/movie/detailsMovie");
+    navigate("/details-movie");
   };
 
   //Render UI list movie

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
-import { pagination_slice } from "../../redux/Phimmoi_redux/Pagination_slice";
+import { pagination_slice } from "../../redux/Reducer/Pagination_slice";
 import ListFilms from "../ListFilm/ListFilms";
 import Pagination_movie from "../Pagination/Pagination_movie";
 import { ListRender } from "../Pagination/Render_Pagination";
@@ -23,6 +23,7 @@ function ListRenderCommon(props) {
     );
     setIsLoading(true);
   }, []);
+
   return (
     <div className="mt-[76px] element_center flex-col w-[80%] pt-[30px]">
       <Search_film />

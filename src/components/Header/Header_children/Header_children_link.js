@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { numberHeader_selector } from "../../../redux/Selector/NumberHeader_selector";
 import { styleLinks } from "../../HeaderStyle/HeaderLinkStyle";
-import { Phimmoi_slice } from "../../../redux/Phimmoi_redux/Phimmoi_slice";
+import { Phimmoi_slice } from "../../../redux/Reducer/Phimmoi_slice";
 import { saveValueStorage } from "../../LocalStorage/StorageHeader";
 import Button_login from "../../Button/Button_login";
 import Button_registration from "../../Button/Button_registration";
@@ -43,12 +43,12 @@ function Header_children_link(props) {
   // first_navLinks
   const handleSeriesFilm = () => {
     dispatch(Phimmoi_slice.actions.handleNumberHeader(3));
-    navigate("/category/phim-bo");
+    navigate("/phim-bo");
   };
 
   const handleOddFilm = () => {
     dispatch(Phimmoi_slice.actions.handleNumberHeader(2));
-    navigate("/category/phim-le");
+    navigate("/phim-le");
   };
 
   const handleNewMovie = () => {
@@ -58,12 +58,12 @@ function Header_children_link(props) {
 
   const handleCartoonMovie = () => {
     dispatch(Phimmoi_slice.actions.handleNumberHeader(4));
-    navigate("/category/phim-hoat-hinh");
+    navigate("/phim-hoat-hinh");
   };
 
   const handleCinemaMovie = () => {
     dispatch(Phimmoi_slice.actions.handleNumberHeader(5));
-    navigate("/category/phim-chieu-rap");
+    navigate("/phim-chieu-rap");
   };
 
   return (

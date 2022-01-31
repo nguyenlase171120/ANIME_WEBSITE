@@ -1,9 +1,9 @@
 import React from "react";
 
 function Button_logout() {
+  //Remove account from local storage and reload website
   const handleLogout = () => {
     localStorage.removeItem("user_profile");
-    localStorage.setItem("previousId", "#link_1");
     window.location.reload();
   };
   return (

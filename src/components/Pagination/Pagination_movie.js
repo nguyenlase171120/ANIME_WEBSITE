@@ -2,10 +2,7 @@
 import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/solid";
 import Pagination_index from "./Pagination_index";
 import { useDispatch } from "react-redux";
-import { pagination_slice } from "../../redux/Phimmoi_redux/Pagination_slice";
 export default function Pagination_movie(props) {
-  const dispatch = useDispatch();
-
   return (
     <div className="bg-[#081B27] px-4 py-3 flex items-center justify-between border-t border-gray-200 sm:px-6">
       <div className="flex-1 flex justify-between sm:hidden">
