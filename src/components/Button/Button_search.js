@@ -1,10 +1,18 @@
-import React from "react";
 import { useNavigate } from "react-router-dom";
+import { FilmAPI } from "../../api/FilmAPI";
+import { useDispatch } from "react-redux";
+import { Search_slice } from "../../redux/Phimmoi_redux/Search_slice";
 
 function Button_search(props) {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
-  const handleSearch = () => {
+  const handleSearch = async () => {
+    const param = {
+      title: props.valueSearch,
+    };
+    const listAnime = await FilmAPI.getAllFilm(param);
+    dispatch(Search_slice.actions.handleSearchFilm(listAnime));
     navigate("/search");
   };
 

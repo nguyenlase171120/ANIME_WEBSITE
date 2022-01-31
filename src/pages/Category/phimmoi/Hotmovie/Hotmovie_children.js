@@ -32,7 +32,7 @@ function Hotmovie_children() {
     }
   }, []);
   return (
-    <div className="flex flex-col ">
+    <div className="w-full">
       {isLoading ? (
         <HotMovide_content listHotMovie={getAllFilm} />
       ) : (

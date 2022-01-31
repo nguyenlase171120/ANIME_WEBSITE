@@ -8,7 +8,7 @@ import Button_watch from "../Button/Button_watch";
 import TrailerVideo from "../Trailer/TrailerVideo";
 import Suggest_movie from "./Suggest/Suggest_movie";
 import { List_description } from "./Description/Description_movie";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Footer_container from "../Footer/Footer_container";
 
 //bg-[#081B27]
@@ -75,7 +75,7 @@ function DetailsMovie(props) {
 
                 <div className="flex items-center mt-5">
                   <Button_trailer name="Trailer" />
-                  <Button_watch name="Xem phim" />
+                  <Button_watch name="Xem phim" anime={getAnime} />
                 </div>
 
                 <div className="flex flex-col  text-left items-center font-semibold text-white">

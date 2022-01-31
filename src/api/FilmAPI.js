@@ -9,4 +9,8 @@ export const FilmAPI = {
     const url = `/v1/random/anime/${params}/true`;
     return axiosClient.get(url);
   },
+  getEpisode: (params) => {
+    const url = "/v1/episode";
+    return axiosClient.get(url, { params });
+  },
 };

@@ -17,12 +17,12 @@ function HotMovide_content(props) {
   const renderListMovie = () => {
     return listMovie.map((value) => (
       <div>
-        <h1 className="text-yellow-600 font-bold mb-[30px] uppercase">
+        <h1 className="text-yellow-600 font-bold text-[21px] my-[20px]  w-[340px]  uppercase">
           {value.name}
         </h1>
-        <div className="overflow-y-scroll w-[271px] h-[500px] ">
+        <div className="overflow-y-scroll w-[340px] h-[500px] ">
           {value.list_film.data.map((anime) => (
-            <div className="flex w-full mb-[15px] items-center justify-center">
+            <div className="flex w-full mb-[15px] items-center ">
               <div className="relative">
                 <div onClick={() => handleDetailsMovie(anime)}>
                   <img

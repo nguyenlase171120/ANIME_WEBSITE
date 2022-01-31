@@ -41,3 +41,15 @@
 .style_desc {
   @apply text-[#9cabb6] mt-[15px] mb-[20px];
 }
+
+.input_login {
+  @apply my-[15px] border-b-2 border-b-indigo-500 placeholder:pl-4 py-[8px]  outline-none placeholder:text-[12px];
+}
+
+.error_input {
+  @apply my-[10px] text-red-600 text-[12px];
+}
+
+.link_form {
+  @apply text-[12px] text-right text-blue-600 font-semibold hover:underline;
+}

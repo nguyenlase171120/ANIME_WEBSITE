@@ -1,8 +1,14 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { Phimmoi_slice } from "../../redux/Phimmoi_redux/Phimmoi_slice";
+
 function Button_watch(props) {
+  const dispatch = useDispatch();
+
   const navigate = useNavigate();
   const handleWatchMovie = () => {
+    dispatch(Phimmoi_slice.actions.handleDetailsAnime(props.anime));
     navigate("/watch/watchMovie");
   };
   return (

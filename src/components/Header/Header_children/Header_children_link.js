@@ -5,9 +5,16 @@ import { numberHeader_selector } from "../../../redux/Selector/NumberHeader_sele
 import { styleLinks } from "../../HeaderStyle/HeaderLinkStyle";
 import { Phimmoi_slice } from "../../../redux/Phimmoi_redux/Phimmoi_slice";
 import { saveValueStorage } from "../../LocalStorage/StorageHeader";
+import Button_login from "../../Button/Button_login";
+import Button_registration from "../../Button/Button_registration";
+import Button_logout from "../../Button/Button_logout";
 
 const $ = document.querySelector.bind(document);
-function Header_children_link() {
+function Header_children_link(props) {
+  const [user, setUser] = useState(() => {
+    const profile = localStorage.getItem("user_profile");
+    return JSON.parse(profile);
+  });
   const dispatch = useDispatch();
   const numberPage = useSelector(numberHeader_selector);
   const navigate = useNavigate();
@@ -31,8 +38,9 @@ function Header_children_link() {
     }
   }, [numberPage]);
 
-  // first_navLinks
+  useEffect(() => {}, []);
 
+  // first_navLinks
   const handleSeriesFilm = () => {
     dispatch(Phimmoi_slice.actions.handleNumberHeader(3));
     navigate("/category/phim-bo");
@@ -57,8 +65,9 @@ function Header_children_link() {
     dispatch(Phimmoi_slice.actions.handleNumberHeader(5));
     navigate("/category/phim-chieu-rap");
   };
+
   return (
-    <div>
+    <div className="flex items-center">
       <ul className="element_center h-[76px]">
         <li
           id="link_1"
@@ -84,6 +93,26 @@ function Header_children_link() {
           Phim chiếu rạp
         </li>
       </ul>
+
+      {props.isLogin ? (
+        <div className="flex items-center">
+          <div className="flex items-center mr-5">
+            <img
+              src="https://toppng.com/uploads/preview/vu-thi-ha-user-pro-icon-115534024853ae3gswzwd.png"
+              alt="Loading..."
+              className="h-[30px] rounded-2xl mr-3 cursor-pointer"
+            />
+            <p className="text-white font-semibold text-[14px]">{user.name}</p>
+          </div>
+
+          <Button_logout />
+        </div>
+      ) : (
+        <div className="flex items-center">
+          <Button_login />
+          <Button_registration />
+        </div>
+      )}
     </div>
   );
 }

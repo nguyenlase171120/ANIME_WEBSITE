@@ -1,4 +1,4 @@
-import React from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 
@@ -6,10 +6,20 @@ import { useDispatch } from "react-redux";
 import { logo_website } from "../../assets/asset_render";
 import Header_children_link from "./Header_children/Header_children_link";
 import { Phimmoi_slice } from "../../redux/Phimmoi_redux/Phimmoi_slice";
+import { onAuthStateChanged } from "firebase/auth";
+import { authentication } from "../../firebase/Firebase-config";
 
 function Header_container() {
+  const [isLogin, setIsLogin] = useState(false);
   const navigate = useNavigate();
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    const isLogin = localStorage.getItem("user_profile");
+    if (isLogin) {
+      setIsLogin(true);
+    }
+  });
 
   const handleHome = () => {
     dispatch(Phimmoi_slice.actions.handleNumberHeader(1));
@@ -25,7 +35,7 @@ function Header_container() {
           alt="Loading..."
           onClick={handleHome}
         />
-        <Header_children_link />
+        <Header_children_link isLogin={isLogin} />
       </div>
     </div>
   );

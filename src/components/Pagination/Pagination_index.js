@@ -12,6 +12,10 @@ function Pagination_index(props) {
       $(`#${isResult}`).style.backgroundColor = "white";
       $(`#${isResult}`).style.text = "gray";
     }
+
+    const isMovePage = props.index;
+    console.log(isMovePage);
+
     localStorage.setItem("colorPage", idPage);
     $(`#${idPage}`).style.backgroundColor = "black";
     $(`#${idPage}`).style.text = "white";
@@ -19,7 +23,6 @@ function Pagination_index(props) {
 
   const dispatch = useDispatch();
   const handlePaging = async () => {
-    "vo day";
     switch (props.name) {
       case "phim-le": {
         let index = props.index;
